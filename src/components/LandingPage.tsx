@@ -40,25 +40,45 @@ export default function LandingPage() {
       </section>
 
       {/* Feature Highlights */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 py-24 bg-[#F5F5F5] dark:bg-[#2B2B2B]">
-        <div className="text-center">
-          <h3 className="text-xl font-medium mb-2">Daily Reflections</h3>
-          <p className="text-[#666666] dark:text-[#A5A5A5]">
-            Receive thought-provoking Stoic quotes each day.
+      <section className="px-6 py-24 bg-[#F5F5F5] dark:bg-[#2B2B2B]">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-sm uppercase tracking-wide text-[#A5A5A5] text-center mb-2">
+            Features
           </p>
-        </div>
-        <div className="text-center">
-          <h3 className="text-xl font-medium mb-2">Save Your Favourites</h3>
-          <p className="text-[#666666] dark:text-[#A5A5A5]">
-            Bookmark quotes and revisit wisdom any time.
-          </p>
-        </div>
-        <div className="text-center">
-          <h3 className="text-xl font-medium mb-2">Private Journaling</h3>
-          <p className="text-[#666666] dark:text-[#A5A5A5]">
-            Write and reflect daily to gain perspective and track your Stoic
-            journey.
-          </p>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-center">
+            Why Choose Stoic?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              {
+                title: 'Daily Reflections',
+                description: 'Receive thought-provoking Stoic quotes each day.',
+                icon: '📜', // Replace with an actual icon if using a library like Heroicons
+              },
+              {
+                title: 'Save Your Favourites',
+                description: 'Bookmark quotes and revisit wisdom any time.',
+                icon: '⭐', // Replace with an actual icon
+              },
+              {
+                title: 'Private Journaling',
+                description:
+                  'Write and reflect daily to gain perspective and track your Stoic journey.',
+                icon: '🖋️', // Replace with an actual icon
+              },
+            ].map(({ title, description, icon }, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center p-6 bg-white dark:bg-[#1C1C1C] rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="text-5xl mb-4">{icon}</div>
+                <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                <p className="text-[#666666] dark:text-[#A5A5A5]">
+                  {description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -74,6 +94,8 @@ export default function LandingPage() {
           <input
             type="email"
             placeholder="you@example.com"
+            required
+            aria-label="Email address"
             className="px-4 py-2 rounded-lg bg-[#F9F9F9] dark:bg-[#2A2A2A] border border-[#DDDDDD] dark:border-[#444444] w-full max-w-sm focus:outline-none"
           />
           <button
