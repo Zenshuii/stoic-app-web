@@ -19,7 +19,7 @@ export default function LandingPage() {
         </p>
         <button
           aria-label="Join the Waitlist"
-          className="px-6 py-3 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#70BFBF]"
+          className="px-6 py-2 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition cursor-pointer focus:outline-none focus:ring-1 focus:ring-offset-1"
         >
           Join the Waitlist
         </button>
@@ -78,7 +78,7 @@ export default function LandingPage() {
           <button
             aria-label="Notify Me"
             type="submit"
-            className="px-6 py-2 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#70BFBF]"
+            className="px-6 py-2 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition cursor-pointer focus:outline-none focus:ring-1 focus:ring-offset-1"
           >
             Notify Me
           </button>
