@@ -3,12 +3,13 @@ import logo from '../assets/logo/stoic-app-logo-transparent-white.png'
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white text-[#333333] dark:bg-[#1C1C1C] dark:text-[#F5F5F5] font-[Poppins] transition-colors">
-      <header className="flex justify-center items-center py-6">
-        <img src={logo} alt="Stoic App logo" className="h-20 md:h-28 lg:h-32" />
-      </header>
-
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center px-6 py-32">
+        <img
+          src={logo}
+          alt="Stoic App logo"
+          className="h-20 md:h-28 lg:h-32 mb-6"
+        />
         <h1 className="text-4xl md:text-5xl font-semibold mb-4">
           Embrace the Stoic Mindset
         </h1>
