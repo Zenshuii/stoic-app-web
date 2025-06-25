@@ -1,9 +1,10 @@
+import logo from '../assets/logo/stoic-app-logo-transparent-white.png'
+
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white text-[#333333] dark:bg-[#1C1C1C] dark:text-[#F5F5F5] font-[Poppins] transition-colors">
       <header className="flex justify-center items-center py-6">
-        {/* Replace 'logo.png' with the actual path to your logo asset */}
-        <img src="/logo.png" alt="Stoic App logo" className="h-10" />
+        <img src={logo} alt="Stoic App logo" className="h-20 md:h-28 lg:h-32" />
       </header>
 
       {/* Hero Section */}
