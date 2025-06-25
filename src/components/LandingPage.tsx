@@ -1,4 +1,5 @@
-import logo from '../assets/logo/stoic-app-logo-transparent-white.png'
+import logoLight from '../assets/logo/stoic-app-logo-transparent-white.png'
+import logoDark from '../assets/logo/stoic-app-logo-transparent.png'
 import { ScrollText, Bookmark, NotebookPen } from 'lucide-react'
 
 export default function LandingPage() {
@@ -6,11 +7,18 @@ export default function LandingPage() {
     <main className="min-h-screen bg-white text-[#333333] dark:bg-[#1C1C1C] dark:text-[#F5F5F5] font-[Poppins] transition-colors">
       {/* Hero Section */}
       <section className="flex flex-col items-center justify-center text-center px-6 py-32">
-        <img
-          src={logo}
-          alt="Stoic App logo"
-          className="h-20 md:h-28 lg:h-32 mb-6"
-        />
+        <div>
+          <img
+            src={logoDark}
+            alt="Stoic App logo dark"
+            className="block dark:hidden h-20 md:h-28 lg:h-32 mb-6"
+          />
+          <img
+            src={logoLight}
+            alt="Stoic App logo light"
+            className="hidden dark:block h-20 md:h-28 lg:h-32 mb-6"
+          />
+        </div>
         <h1 className="text-4xl md:text-5xl font-semibold mb-4">
           Embrace the Stoic Mindset
         </h1>
