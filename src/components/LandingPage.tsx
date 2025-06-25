@@ -30,7 +30,7 @@ export default function LandingPage() {
       <section className="bg-[#FAF3D4] dark:bg-[#FFDFA5] px-6 py-16">
         <div className="max-w-2xl mx-auto text-center">
           <blockquote className="italic text-xl md:text-2xl text-[#333333] dark:text-[#1C1C1C]">
-            "You have power over your mind — not outside events. Realise this,
+            "You have power over your mind – not outside events. Realise this,
             and you will find strength."
           </blockquote>
           <cite className="block mt-4 text-[#666666] dark:text-[#2B2B2B]">
