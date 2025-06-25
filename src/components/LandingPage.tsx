@@ -58,7 +58,7 @@ export default function LandingPage() {
                   <ScrollText
                     size={40}
                     strokeWidth={1.5}
-                    className="text-[#70BFBF]"
+                    className="text-[#70BFBF] md:w-12 md:h-12 w-10 h-10"
                   />
                 ),
               },
@@ -69,7 +69,7 @@ export default function LandingPage() {
                   <Bookmark
                     size={40}
                     strokeWidth={1.5}
-                    className="text-[#70BFBF]"
+                    className="text-[#70BFBF] md:w-12 md:h-12 w-10 h-10"
                   />
                 ),
               },
@@ -81,7 +81,7 @@ export default function LandingPage() {
                   <NotebookPen
                     size={40}
                     strokeWidth={1.5}
-                    className="text-[#70BFBF]"
+                    className="text-[#70BFBF] md:w-12 md:h-12 w-10 h-10"
                   />
                 ),
               },
@@ -90,7 +90,7 @@ export default function LandingPage() {
                 key={index}
                 className="flex flex-col items-center text-center p-6 bg-white dark:bg-[#1C1C1C] rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="text-5xl mb-4">{icon}</div>
+                <div className="mb-4">{icon}</div>
                 <h3 className="text-xl font-semibold mb-2">{title}</h3>
                 <p className="text-[#666666] dark:text-[#A5A5A5]">
                   {description}
