@@ -1,4 +1,5 @@
 import logo from '../assets/logo/stoic-app-logo-transparent-white.png'
+import { ScrollText, Bookmark, NotebookPen } from 'lucide-react'
 
 export default function LandingPage() {
   return (
@@ -53,18 +54,36 @@ export default function LandingPage() {
               {
                 title: 'Daily Reflections',
                 description: 'Receive thought-provoking Stoic quotes each day.',
-                icon: '📜', // Replace with an actual icon if using a library like Heroicons
+                icon: (
+                  <ScrollText
+                    size={40}
+                    strokeWidth={1.5}
+                    className="text-[#70BFBF]"
+                  />
+                ),
               },
               {
                 title: 'Save Your Favourites',
                 description: 'Bookmark quotes and revisit wisdom any time.',
-                icon: '⭐', // Replace with an actual icon
+                icon: (
+                  <Bookmark
+                    size={40}
+                    strokeWidth={1.5}
+                    className="text-[#70BFBF]"
+                  />
+                ),
               },
               {
                 title: 'Private Journaling',
                 description:
                   'Write and reflect daily to gain perspective and track your Stoic journey.',
-                icon: '🖋️', // Replace with an actual icon
+                icon: (
+                  <NotebookPen
+                    size={40}
+                    strokeWidth={1.5}
+                    className="text-[#70BFBF]"
+                  />
+                ),
               },
             ].map(({ title, description, icon }, index) => (
               <div
