@@ -8,7 +8,7 @@ export default function LandingPage() {
       </header>
 
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center px-6 py-24">
+      <section className="flex flex-col items-center justify-center text-center px-6 py-32">
         <h1 className="text-4xl md:text-5xl font-semibold mb-4">
           Embrace the Stoic Mindset
         </h1>
@@ -17,7 +17,10 @@ export default function LandingPage() {
           clarity. Reflect on timeless wisdom, journal your thoughts, and stay
           grounded each day.
         </p>
-        <button className="px-6 py-3 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition cursor-pointer">
+        <button
+          aria-label="Join the Waitlist"
+          className="px-6 py-3 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#70BFBF]"
+        >
           Join the Waitlist
         </button>
       </section>
@@ -73,8 +76,9 @@ export default function LandingPage() {
             className="px-4 py-2 rounded-lg bg-[#F9F9F9] dark:bg-[#2A2A2A] border border-[#DDDDDD] dark:border-[#444444] w-full max-w-sm focus:outline-none"
           />
           <button
+            aria-label="Notify Me"
             type="submit"
-            className="px-6 py-2 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition cursor-pointer"
+            className="px-6 py-2 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#70BFBF]"
           >
             Notify Me
           </button>
