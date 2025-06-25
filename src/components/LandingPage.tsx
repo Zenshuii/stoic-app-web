@@ -29,7 +29,7 @@ export default function LandingPage() {
         </p>
         <button
           aria-label="Join the Waitlist"
-          className="px-6 py-2 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition cursor-pointer focus:outline-none focus:ring-1 focus:ring-offset-1"
+          className="px-6 py-2 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#333333] dark:focus:ring-[#F5F5F5] dark:focus:ring-offset-[#1C1C1C]"
         >
           Join the Waitlist
         </button>
@@ -98,7 +98,9 @@ export default function LandingPage() {
                 key={index}
                 className="flex flex-col items-center text-center p-6 bg-white dark:bg-[#1C1C1C] rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
-                <div className="mb-4">{icon}</div>
+                <div className="mb-4 transform transition-transform duration-300 hover:scale-110">
+                  {icon}
+                </div>
                 <h3 className="text-xl font-semibold mb-2">{title}</h3>
                 <p className="text-[#666666] dark:text-[#A5A5A5]">
                   {description}
@@ -128,7 +130,7 @@ export default function LandingPage() {
           <button
             aria-label="Notify Me"
             type="submit"
-            className="px-6 py-2 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition cursor-pointer focus:outline-none focus:ring-1 focus:ring-offset-1"
+            className="px-6 py-2 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#333333] dark:focus:ring-[#F5F5F5] dark:focus:ring-offset-[#1C1C1C]"
           >
             Notify Me
           </button>
