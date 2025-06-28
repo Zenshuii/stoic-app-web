@@ -6,23 +6,35 @@ export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white text-[#333333] dark:bg-[#1C1C1C] dark:text-[#F5F5F5] font-[Poppins] transition-colors">
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center text-center px-6 py-32">
+      <section
+        className="flex flex-col items-center justify-center text-center px-6 py-32"
+        data-aos="fade-up"
+      >
         <div>
           <img
             src={logoDark}
             alt="Stoic App logo dark"
             className="block dark:hidden h-20 md:h-28 lg:h-32 mb-6"
+            data-aos="zoom-in"
           />
           <img
             src={logoLight}
             alt="Stoic App logo light"
             className="hidden dark:block h-20 md:h-28 lg:h-32 mb-6"
+            data-aos="zoom-in"
           />
         </div>
-        <h1 className="text-4xl md:text-5xl font-semibold mb-4">
+        <h1
+          className="text-4xl md:text-5xl font-semibold mb-4"
+          data-aos="fade-up"
+        >
           Embrace the Stoic Mindset
         </h1>
-        <p className="text-lg md:text-xl text-[#666666] dark:text-[#A5A5A5] max-w-2xl mb-8">
+        <p
+          className="text-lg md:text-xl text-[#666666] dark:text-[#A5A5A5] max-w-2xl mb-8"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           Stoic is a modern app to help you live with intention, discipline, and
           clarity. Reflect on timeless wisdom, journal your thoughts, and stay
           grounded each day.
@@ -30,6 +42,8 @@ export default function LandingPage() {
         <button
           aria-label="Join the Waitlist"
           className="px-6 py-2 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#333333] dark:focus:ring-[#F5F5F5] dark:focus:ring-offset-[#1C1C1C]"
+          data-aos="fade-up"
+          data-aos-delay="400"
         >
           Join the Waitlist
         </button>
@@ -37,12 +51,16 @@ export default function LandingPage() {
 
       {/* Quote Preview Section */}
       <section className="bg-[#FAF3D4] dark:bg-[#FFDFA5] px-6 py-16">
-        <div className="max-w-2xl mx-auto text-center">
+        <div className="max-w-2xl mx-auto text-center" data-aos="fade-up">
           <blockquote className="italic text-xl md:text-2xl text-[#333333] dark:text-[#1C1C1C]">
             "You have power over your mind – not outside events. Realise this,
             and you will find strength."
           </blockquote>
-          <cite className="block mt-4 text-[#666666] dark:text-[#2B2B2B]">
+          <cite
+            className="block mt-4 text-[#666666] dark:text-[#2B2B2B]"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             – Marcus Aurelius
           </cite>
         </div>
@@ -97,6 +115,8 @@ export default function LandingPage() {
               <div
                 key={index}
                 className="flex flex-col items-center text-center p-6 bg-white dark:bg-[#1C1C1C] rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                data-aos="fade-up"
+                data-aos-delay={index * 200}
               >
                 <div className="mb-4 transform transition-transform duration-300 hover:scale-110">
                   {icon}
