@@ -39,14 +39,14 @@ export default function LandingPage() {
           clarity. Reflect on timeless wisdom, journal your thoughts, and stay
           grounded each day.
         </p>
-        <button
-          aria-label="Join the Waitlist"
-          className="px-6 py-2 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#333333] dark:focus:ring-[#F5F5F5] dark:focus:ring-offset-[#1C1C1C]"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          Join the Waitlist
-        </button>
+        <div data-aos="fade-up" data-aos-delay="400">
+          <button
+            aria-label="Join the Waitlist"
+            className="px-5 py-2.5 bg-[#70BFBF] text-white text-base font-medium rounded-xl shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] active:shadow-inner transition-transform duration-200 ease-in-out focus:outline-none focus-visible:ring-0 cursor-pointer"
+          >
+            Join the Waitlist
+          </button>
+        </div>
       </section>
 
       {/* Quote Preview Section */}
@@ -150,7 +150,7 @@ export default function LandingPage() {
           <button
             aria-label="Notify Me"
             type="submit"
-            className="px-6 py-2 bg-[#70BFBF] text-white font-medium rounded-xl shadow hover:opacity-90 transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#333333] dark:focus:ring-[#F5F5F5] dark:focus:ring-offset-[#1C1C1C]"
+            className="px-5 py-2.5 bg-[#70BFBF] text-white text-base font-medium rounded-xl shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] active:shadow-inner transition-transform duration-200 ease-in-out focus:outline-none focus-visible:ring-0 cursor-pointer"
           >
             Notify Me
           </button>
