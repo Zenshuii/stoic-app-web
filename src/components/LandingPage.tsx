@@ -1,7 +1,7 @@
+import { FaInstagram, FaYoutube } from 'react-icons/fa'
 import logoLight from '../assets/logo/stoic-app-logo-transparent-white.png'
 import logoDark from '../assets/logo/stoic-app-logo-transparent.png'
 import { ScrollText, Bookmark, NotebookPen } from 'lucide-react'
-
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-white text-[#333333] dark:bg-[#1C1C1C] dark:text-[#F5F5F5] font-[Poppins] transition-colors">
@@ -159,7 +159,29 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="px-6 py-12 text-center text-sm text-[#A5A5A5] dark:text-[#666666]">
-        © {new Date().getFullYear()} Stoic App by Zenshuii
+        <p className="mb-4">
+          © {new Date().getFullYear()} Stoic App by Zenshuii
+        </p>
+        <div className="flex justify-center gap-6">
+          <a
+            href="https://www.instagram.com/zenshuii/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-transform duration-200 hover:scale-110"
+            aria-label="Zenshuii on Instagram"
+          >
+            <FaInstagram className="w-5 h-5 text-[#A5A5A5] dark:text-[#666666] hover:text-[#70BFBF] transition-colors" />
+          </a>
+          <a
+            href="https://www.youtube.com/@zenshuiistudios"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-transform duration-200 hover:scale-110"
+            aria-label="Zenshuii on YouTube"
+          >
+            <FaYoutube className="w-5 h-5 text-[#A5A5A5] dark:text-[#666666] hover:text-[#70BFBF] transition-colors" />
+          </a>
+        </div>
       </footer>
     </main>
   )
