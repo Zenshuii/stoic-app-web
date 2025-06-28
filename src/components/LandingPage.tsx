@@ -170,7 +170,7 @@ export default function LandingPage() {
             className="transition-transform duration-200 hover:scale-110"
             aria-label="Zenshuii on Instagram"
           >
-            <FaInstagram className="w-5 h-5 text-[#A5A5A5] dark:text-[#666666]" />
+            <FaInstagram className="w-5 h-5 text-[#A5A5A5] dark:text-[#666666] hover:text-[#70BFBF] transition-colors" />
           </a>
           <a
             href="https://www.youtube.com/@zenshuiistudios"
@@ -179,7 +179,7 @@ export default function LandingPage() {
             className="transition-transform duration-200 hover:scale-110"
             aria-label="Zenshuii on YouTube"
           >
-            <FaYoutube className="w-5 h-5 text-[#A5A5A5] dark:text-[#666666]" />{' '}
+            <FaYoutube className="w-5 h-5 text-[#A5A5A5] dark:text-[#666666] hover:text-[#70BFBF] transition-colors" />
           </a>
         </div>
       </footer>
