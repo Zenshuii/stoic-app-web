@@ -2,7 +2,51 @@ import { FaInstagram, FaYoutube } from 'react-icons/fa'
 import logoLight from '../assets/logo/stoic-app-logo-transparent-white.png'
 import logoDark from '../assets/logo/stoic-app-logo-transparent.png'
 import { ScrollText, Bookmark, NotebookPen } from 'lucide-react'
+import { useRef, useState } from 'react'
+import { doc, serverTimestamp, setDoc } from 'firebase/firestore'
+import { db } from '../lib/firebase'
+
 export default function LandingPage() {
+  const [email, setEmail] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
+  const [showInputError, setShowInputError] = useState(false)
+
+  const formRef = useRef<HTMLFormElement | null>(null)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setError('')
+    if (!email.trim()) {
+      setShowInputError(true)
+      return
+    } else {
+      setShowInputError(false)
+    }
+    try {
+      const lowerEmail = email.toLowerCase()
+      await setDoc(doc(db, 'waitlistSignups', lowerEmail), {
+        email: lowerEmail,
+        createdAt: serverTimestamp(),
+        source: 'landing-page',
+      })
+      setSubmitted(true)
+      setEmail('')
+    } catch (err: unknown) {
+      if (
+        typeof err === 'object' &&
+        err !== null &&
+        'code' in err &&
+        (err as { code?: string }).code === 'permission-denied'
+      ) {
+        setError('This email is already registered.')
+      } else {
+        setError('Something went wrong. Please try again.')
+      }
+      console.error(err)
+    }
+  }
+
   return (
     <main className="min-h-screen bg-white text-[#333333] dark:bg-[#1C1C1C] dark:text-[#F5F5F5] font-[Poppins] transition-colors">
       {/* Hero Section */}
@@ -43,6 +87,10 @@ export default function LandingPage() {
           <button
             aria-label="Join the Waitlist"
             className="px-5 py-2.5 bg-[#70BFBF] text-white text-base font-medium rounded-xl shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] active:shadow-inner transition-transform duration-200 ease-in-out focus:outline-none focus-visible:ring-0 cursor-pointer"
+            onClick={() => {
+              formRef.current?.scrollIntoView({ behavior: 'smooth' })
+              setShowInputError(!email.trim())
+            }}
           >
             Join the Waitlist
           </button>
@@ -139,12 +187,19 @@ export default function LandingPage() {
         <p className="text-[#666666] dark:text-[#A5A5A5] mb-6">
           Sign up to be notified when the Stoic App launches.
         </p>
-        <form className="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+        <form
+          ref={formRef}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          onSubmit={handleSubmit}
+        >
           <input
+            aria-label="Email address"
             type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
             required
-            aria-label="Email address"
             className="px-4 py-2 rounded-lg bg-[#F9F9F9] dark:bg-[#2A2A2A] border border-[#DDDDDD] dark:border-[#444444] w-full max-w-sm focus:outline-none"
           />
           <button
@@ -152,9 +207,27 @@ export default function LandingPage() {
             type="submit"
             className="px-5 py-2.5 bg-[#70BFBF] text-white text-base font-medium rounded-xl shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] active:shadow-inner transition-transform duration-200 ease-in-out focus:outline-none focus-visible:ring-0 cursor-pointer"
           >
-            Notify Me
+            {submitted ? '✔️ Submitted' : 'Notify Me'}
           </button>
         </form>
+
+        <div className="h-6 mt-4">
+          {showInputError && !submitted && (
+            <p className="text-sm text-center text-[#70BFBF]">
+              Please enter a valid email to join the waitlist.
+            </p>
+          )}
+          {error && (
+            <p className="text-sm text-center text-[#FF4C4C] dark:text-[#FF6B6B]">
+              {error}
+            </p>
+          )}
+          {submitted && !error && (
+            <p className="text-sm text-center text-[#4CAF6A] dark:text-[#B2E1C2] animate-fade-in-out">
+              You’ve been added to the waitlist!
+            </p>
+          )}
+        </div>
       </section>
 
       {/* Footer */}
