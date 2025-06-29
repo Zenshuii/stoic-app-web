@@ -210,22 +210,24 @@ export default function LandingPage() {
             {submitted ? '✔️ Submitted' : 'Notify Me'}
           </button>
         </form>
-        {showInputError && !submitted && (
-          <p className="text-sm mt-4 text-center text-[#70BFBF]">
-            Please enter a valid email to join the waitlist.
-          </p>
-        )}
-        {error && (
-          <p className="text-sm mt-4 text-center text-[#FF4C4C] dark:text-[#FF6B6B]">
-            {error}
-          </p>
-        )}
-        {submitted && !error && (
-          <p className="text-sm mt-4 text-center text-[#4CAF6A] dark:text-[#B2E1C2] animate-fade-in-out">
-            {' '}
-            You’ve been added to the waitlist!
-          </p>
-        )}
+
+        <div className="h-6 mt-4">
+          {showInputError && !submitted && (
+            <p className="text-sm text-center text-[#70BFBF]">
+              Please enter a valid email to join the waitlist.
+            </p>
+          )}
+          {error && (
+            <p className="text-sm text-center text-[#FF4C4C] dark:text-[#FF6B6B]">
+              {error}
+            </p>
+          )}
+          {submitted && !error && (
+            <p className="text-sm text-center text-[#4CAF6A] dark:text-[#B2E1C2] animate-fade-in-out">
+              You’ve been added to the waitlist!
+            </p>
+          )}
+        </div>
       </section>
 
       {/* Footer */}
