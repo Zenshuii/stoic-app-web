@@ -5,6 +5,7 @@ import { ScrollText, Bookmark, NotebookPen } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { doc, serverTimestamp, setDoc } from 'firebase/firestore'
 import { db } from '../lib/firebase'
+import { smoothScrollTo } from '../utils/smoothScrollTo'
 
 export default function LandingPage() {
   const [email, setEmail] = useState('')
@@ -88,8 +89,12 @@ export default function LandingPage() {
             aria-label="Join the Waitlist"
             className="px-5 py-2.5 bg-[#70BFBF] text-white text-base font-medium rounded-xl shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] active:shadow-inner transition-transform duration-200 ease-in-out focus:outline-none focus-visible:ring-0 cursor-pointer"
             onClick={() => {
-              formRef.current?.scrollIntoView({ behavior: 'smooth' })
-              setShowInputError(!email.trim())
+              if (formRef.current) {
+                const targetY =
+                  formRef.current.getBoundingClientRect().top + window.scrollY
+                smoothScrollTo(targetY, 1500)
+                setShowInputError(!email.trim())
+              }
             }}
           >
             Join the Waitlist
@@ -165,6 +170,7 @@ export default function LandingPage() {
                 className="flex flex-col items-center text-center p-6 bg-white dark:bg-[#1C1C1C] rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                 data-aos="fade-up"
                 data-aos-delay={index * 200}
+                data-aos-offset="200"
               >
                 <div className="mb-4 transform transition-transform duration-300 hover:scale-110">
                   {icon}
