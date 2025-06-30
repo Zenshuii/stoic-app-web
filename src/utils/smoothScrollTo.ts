@@ -1,6 +1,11 @@
 export const smoothScrollTo = (targetY: number, baseDuration = 1000) => {
   const startY = window.scrollY
   const diff = targetY - startY
+
+  if (diff === 0) {
+    return
+  }
+
   const duration = Math.min(Math.abs(diff) / 2, baseDuration)
   let start: number | null = null
 
