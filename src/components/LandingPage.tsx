@@ -170,7 +170,7 @@ export default function LandingPage() {
                 className="flex flex-col items-center text-center p-6 bg-white dark:bg-[#1C1C1C] rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                 data-aos="fade-up"
                 data-aos-delay={index * 200}
-                data-aos-offset="200"
+                data-aos-offset="120"
               >
                 <div className="mb-4 transform transition-transform duration-300 hover:scale-110">
                   {icon}
