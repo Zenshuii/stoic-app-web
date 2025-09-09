@@ -186,7 +186,7 @@ export default function LandingPage() {
       </section>
 
       {/* Call To Action */}
-      <section className="px-6 py-16 text-center">
+      <section className="px-6 pt-16 pb-8 md:pb-10 text-center">
         <h2 className="text-2xl md:text-3xl font-semibold mb-4">
           Ready to begin your Stoic journey?
         </h2>
@@ -206,6 +206,12 @@ export default function LandingPage() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
             required
+            aria-invalid={showInputError || !!error ? true : undefined}
+            aria-describedby={
+              showInputError || !!error || (submitted && !error)
+                ? 'email-messages'
+                : undefined
+            }
             className="px-4 py-2 rounded-lg bg-[#F9F9F9] dark:bg-[#2A2A2A] border border-[#DDDDDD] dark:border-[#444444] w-full max-w-sm focus:outline-none"
           />
           <button
@@ -217,19 +223,24 @@ export default function LandingPage() {
           </button>
         </form>
 
-        <div className="h-6 mt-4">
+        <div
+          id="email-messages"
+          className="min-h-[1.25rem] mt-2"
+          aria-live="polite"
+          aria-atomic="true"
+        >
           {showInputError && !submitted && (
-            <p className="text-sm text-center text-[#70BFBF]">
+            <p className="text-sm text-center text-[#70BFBF]" role="alert">
               Please enter a valid email to join the waitlist.
             </p>
           )}
           {error && (
-            <p className="text-sm text-center text-[#FF4C4C] dark:text-[#FF6B6B]">
+            <p className="text-sm text-center text-[#FF4C4C] dark:text-[#FF6B6B]" role="alert">
               {error}
             </p>
           )}
           {submitted && !error && (
-            <p className="text-sm text-center text-[#4CAF6A] dark:text-[#B2E1C2] animate-fade-in-out">
+            <p className="text-sm text-center text-[#4CAF6A] dark:text-[#B2E1C2] animate-fade-in-out" role="status">
               You’ve been added to the waitlist!
             </p>
           )}
@@ -237,7 +248,7 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="px-6 py-12 text-center text-sm text-[#A5A5A5] dark:text-[#666666]">
+      <footer className="px-6 pt-6 pb-10 md:pt-8 md:pb-12 text-center text-sm text-[#A5A5A5] dark:text-[#666666] border-t border-black/10 dark:border-white/10">
         <p className="mb-4">
           © {new Date().getFullYear()} Stoic App by Zenshuii
         </p>
