@@ -250,7 +250,16 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="px-6 pt-6 pb-10 md:pt-8 md:pb-12 text-center text-sm text-[#A5A5A5] dark:text-[#666666] border-t border-black/10 dark:border-white/10">
         <p className="mb-4">
-          © {new Date().getFullYear()} Stoic App by Zenshuii
+          © {new Date().getFullYear()} Stoic App by{' '}
+          <a
+            href="https://zenshuii.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-inherit underline underline-offset-4 hover:text-[#70BFBF] transition-colors"
+            aria-label="Zenshuii website"
+          >
+            Zenshuii
+          </a>
         </p>
         <div className="flex justify-center gap-6">
           <a
