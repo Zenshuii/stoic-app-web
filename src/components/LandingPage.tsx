@@ -2,7 +2,6 @@ import { FaInstagram, FaYoutube } from 'react-icons/fa'
 import { ArrowRight, BookOpen, Bookmark, Check, Sparkles } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
-import logoLight from '../assets/logo/stoic-app-logo.svg'
 import { smoothScrollTo } from '../utils/smoothScrollTo'
 
 import { StoicAppPreview } from './StoicAppPreview'
@@ -124,7 +123,7 @@ export default function LandingPage() {
         <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
           <div className="flex items-center gap-3">
             <img
-              src={logoLight}
+              src="/stoic-app-logo-white.svg"
               alt=""
               aria-hidden="true"
               width="36"
