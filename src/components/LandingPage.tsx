@@ -2,7 +2,7 @@ import { FaInstagram, FaYoutube } from 'react-icons/fa'
 import { ArrowRight, BookOpen, Bookmark, Check, Sparkles } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
-import logoLight from '../assets/logo/stoic-app-logo.svg'
+import logoLight from '../assets/logo/stoic-app-logo-white.svg'
 import { smoothScrollTo } from '../utils/smoothScrollTo'
 
 import { StoicAppPreview } from './StoicAppPreview'
