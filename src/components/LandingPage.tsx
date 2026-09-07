@@ -120,7 +120,18 @@ export default function LandingPage() {
           <div className="absolute bottom-[-24rem] right-[-10rem] hidden h-[34rem] w-[34rem] rounded-full bg-[#2E8282]/15 blur-[100px] sm:block" />
         </div>
 
-        <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block"
+        >
+          <img
+            src="/stoic-app-logo-white.svg"
+            alt=""
+            className="hero-watermark absolute left-[42%] top-[58%] w-[min(42vw,30rem)] max-w-[calc(100%-4rem)] -translate-x-1/2 -translate-y-1/2 opacity-[0.045] xl:top-[53%] xl:w-[min(44vw,34rem)]"
+          />
+        </div>
+
+        <header className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
           <div className="flex items-center gap-3">
             <img
               src="/stoic-app-logo-white.svg"
@@ -145,7 +156,7 @@ export default function LandingPage() {
 
         <div
           id="top"
-          className="mx-auto grid max-w-7xl items-center gap-14 px-6 pb-20 pt-16 lg:grid-cols-[1.03fr_0.97fr] lg:px-8 lg:pb-28 lg:pt-24"
+          className="relative z-10 mx-auto grid max-w-7xl items-center gap-14 px-6 pb-20 pt-16 lg:grid-cols-[1.03fr_0.97fr] lg:px-8 lg:pb-28 lg:pt-24"
         >
           <div className="hero-enter max-w-2xl">
             <p className="mb-6 text-xs font-medium uppercase tracking-[0.2em] text-[#70BFBF]">
